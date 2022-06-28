@@ -4,7 +4,7 @@
 #
 Name     : pypi-exdir
 Version  : 0.4.2
-Release  : 4
+Release  : 5
 URL      : https://files.pythonhosted.org/packages/54/f3/05a79114fdec076c922aa79effa4211a4b3ab1ff7ea28017b5ff4a2944ab/exdir-0.4.2.tar.gz
 Source0  : https://files.pythonhosted.org/packages/54/f3/05a79114fdec076c922aa79effa4211a4b3ab1ff7ea28017b5ff4a2944ab/exdir-0.4.2.tar.gz
 Summary  : UNKNOWN
@@ -67,7 +67,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1653059848
+export SOURCE_DATE_EPOCH=1656375410
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -106,7 +106,7 @@ popd
 ## install_append content
 mv %{buildroot}/usr/etc %{buildroot}/usr/share
 ## install_append end
-/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot}/usr/share/clear/optimized-elf/ %{buildroot}/usr/share/clear/filemap/filemap-%{name}
+/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files
 %defattr(-,root,root,-)
