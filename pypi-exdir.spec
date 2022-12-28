@@ -4,7 +4,7 @@
 #
 Name     : pypi-exdir
 Version  : 0.4.2
-Release  : 11
+Release  : 12
 URL      : https://files.pythonhosted.org/packages/54/f3/05a79114fdec076c922aa79effa4211a4b3ab1ff7ea28017b5ff4a2944ab/exdir-0.4.2.tar.gz
 Source0  : https://files.pythonhosted.org/packages/54/f3/05a79114fdec076c922aa79effa4211a4b3ab1ff7ea28017b5ff4a2944ab/exdir-0.4.2.tar.gz
 Summary  : UNKNOWN
@@ -17,6 +17,9 @@ BuildRequires : buildreq-distutils3
 BuildRequires : pypi(numpy)
 BuildRequires : pypi(ruamel.yaml)
 BuildRequires : pypi(six)
+# Suppress stripping binaries
+%define __strip /bin/true
+%define debug_package %{nil}
 
 %description
 [![Build Status](https://travis-ci.org/CINPLA/exdir.svg?branch=dev)](https://travis-ci.org/CINPLA/exdir)
@@ -67,15 +70,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1656406217
+export SOURCE_DATE_EPOCH=1672270675
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=auto "
-export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
-export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
-export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
+export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
