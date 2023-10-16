@@ -1,5 +1,5 @@
 PKG_NAME := pypi-exdir
-URL = https://files.pythonhosted.org/packages/54/f3/05a79114fdec076c922aa79effa4211a4b3ab1ff7ea28017b5ff4a2944ab/exdir-0.4.2.tar.gz
+URL = https://files.pythonhosted.org/packages/22/f8/3ab5673a7ac089d0f067b21d78cfafb0a28f4b4370d836e1014ab169a99a/exdir-0.5.0.1.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
