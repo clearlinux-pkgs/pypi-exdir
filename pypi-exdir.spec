@@ -7,7 +7,7 @@
 #
 Name     : pypi-exdir
 Version  : 0.5.0.1
-Release  : 17
+Release  : 18
 URL      : https://files.pythonhosted.org/packages/22/f8/3ab5673a7ac089d0f067b21d78cfafb0a28f4b4370d836e1014ab169a99a/exdir-0.5.0.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/22/f8/3ab5673a7ac089d0f067b21d78cfafb0a28f4b4370d836e1014ab169a99a/exdir-0.5.0.1.tar.gz
 Summary  : No detailed summary available
@@ -24,6 +24,7 @@ BuildRequires : pypi(six)
 # Suppress stripping binaries
 %define __strip /bin/true
 %define debug_package %{nil}
+Patch1: backport-deps.patch
 
 %description
 [![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
@@ -71,6 +72,7 @@ python3 components for the pypi-exdir package.
 %prep
 %setup -q -n exdir-0.5.0.1
 cd %{_builddir}/exdir-0.5.0.1
+%patch -P 1 -p1
 pushd ..
 cp -a exdir-0.5.0.1 buildavx2
 popd
@@ -80,7 +82,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1697729956
+export SOURCE_DATE_EPOCH=1697731747
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
