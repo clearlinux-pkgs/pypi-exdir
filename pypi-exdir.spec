@@ -7,7 +7,7 @@
 #
 Name     : pypi-exdir
 Version  : 0.5.0.1
-Release  : 18
+Release  : 19
 URL      : https://files.pythonhosted.org/packages/22/f8/3ab5673a7ac089d0f067b21d78cfafb0a28f4b4370d836e1014ab169a99a/exdir-0.5.0.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/22/f8/3ab5673a7ac089d0f067b21d78cfafb0a28f4b4370d836e1014ab169a99a/exdir-0.5.0.1.tar.gz
 Summary  : No detailed summary available
